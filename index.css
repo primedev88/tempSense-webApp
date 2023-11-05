@@ -1,0 +1,43 @@
+.main{
+    height: 400px;
+    width: 600px;
+    background-color: rgb(193, 193, 193);
+    border-radius: 5px;
+    margin: 100px 100px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.temperature{
+    height: 70px;
+    width: 530px;
+    background-color: aliceblue;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.voltage{
+    height: 70px;
+    width: 530px;
+    background-color: aliceblue;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.resistance{
+    height: 70px;
+    width: 530px;
+    background-color: aliceblue;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
