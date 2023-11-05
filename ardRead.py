@@ -1,9 +1,28 @@
-import serial
+import serial.tools.list_ports
+import json
 
-arduino = serial.Serial("/dev/tty/ACM", 9600)  # Replace 'COMX' with the correct serial port name
+ports = serial.tools.list_ports.comports()
+serialInst=serial.Serial()
 
-with open('temperature_data.txt', 'w') as file:
-    while True:
-        data = arduino.readline().decode('utf-8')
-        file.write(data)
-        print(data, end='') 
+portList = []
+
+for onePort in ports:
+    portList.append(str(onePort))
+    print(str(onePort))
+
+serialInst.baudrate = 9600
+serialInst.port = "COM3"
+serialInst.open()
+
+while True:
+    if serialInst.in_waiting:
+        packet = serialInst.readline()
+        numbers=[float(num) for num in packet.split()]
+        data = {
+            "Temperature": numbers[0],
+            "Voltage": numbers[1],
+            "Resistance": numbers[2]
+        }
+        with open('dataset.json', 'w') as json_file:
+            json.dump(data, json_file, indent=4)
+        
