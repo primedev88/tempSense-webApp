@@ -1,9 +1,5 @@
 {
-    "data":[
-        {
-            "Temperature":"20 C",
-            "Voltage":"4 V",
-            "Resistance":"10.5 ohm"
-        }
-    ]
+    "Temperature": 27.04,
+    "Voltage": 0.58,
+    "Resistance": 9.67
 }
